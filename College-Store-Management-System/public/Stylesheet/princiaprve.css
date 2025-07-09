@@ -1,0 +1,53 @@
+/* princiaprve.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff ;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.request {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.approval-buttons {
+    margin-top: 10px;
+}
+
+.approve-btn, .reject-btn {
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.approve-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.reject-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+.approve-btn:hover, .reject-btn:hover {
+    opacity: 0.8;
+}

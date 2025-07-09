@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff-Lab Request Form</title>
+  <link rel="stylesheet" href="../Stylesheet/staff_req.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Staff-Lab Request Form</h2>
+    <form action="/req" method="post" id="myForm">
+      <div class="form-group">
+        <label for="department-name">Department Name:</label>
+        <input name="Department_name" type="text" placeholder="Enter the Department Name" class="pname input-box" id="Department-input-box" autocomplete="off" autofocus required>
+        <div id="Department-result-box" class="result-box"></div>
+      </div> 
+      <div class="form-group">
+        <label for="product-type">Product Type:</label>
+        <select name="product_type" id="product-type" required>
+          <option value="Consumable">Consumable</option>
+          <option value="Non-Consumable">Non-Consumable</option>
+        </select>
+      </div> 
+      <div class="form-group">
+        <label for="Product-input-box">Product Name:</label>
+        <input name="Product_name" type="text" placeholder="Enter the Product Name" class="pname input-box" id="Product-input-box" autocomplete="off" autofocus required>
+        <div id="Product-result-box" class="result-box"></div>
+      </div>
+      <div class="form-group">
+        <label for="Product-description">Product Description:</label>
+        <textarea name="Product_description" id="Product-description" placeholder="Enter the Product Description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+      </div>
+      <div class="form-group">
+        <label for="purpose">Purpose:</label>
+        <select name="purpose" id="purpose" required>
+          <option value="Personal">Personal</option>
+          <option value="Lab">Lab</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="remark">Remark:</label>
+        <textarea name="remark" id="remark" placeholder="Enter Remark" ></textarea>
+      </div>
+      <button id="submitButton" type="submit">Submit</button>
+    </form>
+  </div>
+  <script type="module" src="../Javascript/staff_req.js"></script>
+</body>
+</html>
+

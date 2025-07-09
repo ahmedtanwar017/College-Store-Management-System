@@ -1,0 +1,94 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+h2{
+    text-align: center;
+}
+.back a img{
+    height: 30px;
+    position: absolute;
+    top: 5px;
+}
+#download img{
+    height: 35px;
+    position: absolute;
+    right: 20px;
+}
+#downloadButton {
+    position: absolute;
+    right: 10px;
+    top: 45px;
+
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: black;
+    cursor: pointer;
+}
+
+#downloadButton:hover,
+#downloadButton:focus {
+    background: none;
+    outline: none;
+}
+
+.text p{
+    font-size: 10px;
+
+}
+
+/*  */
+
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.popup {
+    display: block; /* Initially hidden */
+    position: fixed;
+    z-index: 1000; /* Ensure it appears above other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+     /* Semi-transparent black background */
+}
+
+.popup-content {
+    margin: 10% auto; /* Centered vertically */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    max-width: 400px;
+    width: 90%; 
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.close {
+    color: #555; /* Dark gray color */
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.close:hover,
+.close:focus {
+    color: #000; /* Black color on hover/focus */
+    text-decoration: none;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .popup-content {
+        margin: 20px; /* Adjusted margin for smaller screens */
+        width: calc(100% - 40px); /* Adjusted width for smaller screens */
+    }
+}

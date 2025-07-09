@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Status</title>
+  <link rel="stylesheet" href="../Stylesheet/check_req.css">
+</head>
+<body>
+  <header>
+    <h1>Check Status</h1>
+  </header>
+  <div class="container">
+    <section class="status-form">
+      <h2>Check Request Status</h2>
+      <form id="statusForm"  action="/check_req" method="post">
+        <label for="requestId">Request ID:</label>
+        <input type="text" id="requestId" name="requestId" required><br><br>
+        <button type="submit">Check Status</button>
+      </form>
+    </section>
+  
+  </div> 
+
+</body>
+</html>

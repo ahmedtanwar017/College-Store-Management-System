@@ -1,0 +1,76 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Table</title>
+    <link rel="stylesheet" href="../public/Stylesheet/SL.css">
+</head>
+<body>
+    <div class="top">
+        <div class="back">
+            <a href="/return" >
+                <img src="/public/Images/home.svg" alt="back">
+            </a>
+        </div>
+        
+            <!-- <form action="/recieved"  method="post">
+                <div class="input-buttons">
+                    <input name="request_id" type="text" id="requestIdInput" placeholder="Request ID">
+                </div>
+                <div class="action-buttons">
+                    <button class="recieved">Recieved</button>
+                </div>
+            </form>
+         -->
+    
+        <div id="download">
+            <form action="/download_excel" method="post">
+                <img src="../public/Images/download.svg" alt="download">
+                <input type="hidden" name="data" value="<%= JSON.stringify(data) %>">
+                <input type="hidden" name="columns" value="<%= JSON.stringify(columns) %>">
+                <button id="downloadButton" type="submit">Download</button>
+            </form>
+        </div>
+    
+    </div>
+    <!-- <h2>Data Table</h2> -->
+ <div className="container">
+  
+    
+    <% if (typeof data === 'string' || !Array.isArray(columns) || columns.length === 0) { %>
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="close" id="closeBtn">&times;</span>
+                <h5>No data available</h5>
+            </div>
+          </div>
+    <% } else { %>
+       
+        <%- include('table', { columns: columns, data: data }) %>
+        <div id="download">
+            <!-- <div id="link" class="image">
+                <img class="download" src="../public/Images/csvDownload.svg" alt="Download Button"/>
+            </div>
+            <div class="text">
+                <p>DOWNLOAD</p>
+            </div> -->
+         
+    <% } %>
+    
+    <!-- <button id="downloadButton">Download Excel</button> -->
+   
+</div>
+<script>
+    const closeBtn = document.getElementById('closeBtn');
+    closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+</script>
+
+
+</body>
+</html>
+

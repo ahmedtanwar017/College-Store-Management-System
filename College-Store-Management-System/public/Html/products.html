@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products-Filter</title>
+    <link rel="stylesheet" href="../Stylesheet/style4.css">
+    <link rel="stylesheet" href="../Stylesheet/Utility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+  <div class="all flex">
+    <div class="left">
+        <div class="filters  ">
+            <div class="home">
+                <a href='/Homepage'><p>HOME</p></a>
+            </div>            
+            <img class="cross1 pointer relative invert" src="../Images/cross.svg" alt="cancel"/>
+            <div class="login">
+              <a href="/addLogin"><p><i class=" fas fa-plus-circle"></i> Login</p></a>
+            </div>
+            <div class="insideLogin">
+                <div class="department">
+                    <a href="/addDepartment"><p><i class=" fas fa-plus-circle"></i> DEPARTMENT</p></a>
+                </div>
+                <div class="staff">
+                    <a href="/addStaff"><p><i class=" fas fa-plus-circle"></i> STAFF</p></a>
+                </div>
+                <div class="lab">
+                    <a href="/addLab"><p><i class=" fas fa-plus-circle"></i> LAB</p></a>
+                </div>
+            </div>
+            <div class="tables">
+                <p>TABLES</p>
+            </div>
+        </div>
+        <div class="table pointer">
+            <a href="/Departments">DEPARTMENTS</a>
+        </div>
+        <div class="table pointer">
+            <a href="/StaffInfo">STAFF</a>
+        </div>
+    </div>
+    <div class="right">
+        <div class="head flex align-center ">
+            <div class="h-left flex align-center">
+                <div class="hamburger relative pointer">
+                    <img class="absolute hamburger" src="../Images/hamburger.svg" alt="hamburger"/>
+                </div>
+                <div class="T-name">
+                    <h3>PRODUCTS</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div  id="root"></div>
+  
+
+  
+  
+
+<script src="../Javascript/fourth.js"></script>
+<script type="module" src="../Javascript/bundle.js"></script>
+</body>
+</html>

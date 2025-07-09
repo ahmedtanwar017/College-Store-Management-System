@@ -1,0 +1,122 @@
+&::before{
+    content:'';
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(rgba(225, 82, 244, 0.5),rgba(135, 206, 235, 0.75)), url(/Images/m-h-saboo-siddik-college-of-engineering-mumbai-254643.webp);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+}
+body{ 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#img1{
+    opacity: 0.75;
+    width: 20rem;
+    height: 6rem;
+    /* width: 300px;
+    height: 100px; */
+}
+.div1{
+    text-decoration: underline;
+    color: #a8a8b0;
+    text-align: center;
+    
+}
+.name{
+    /* color: rgba(204,36,226); */
+    color:#e152f4;
+}
+.space{
+    height: 55vh;
+    visibility: hidden;
+}
+#about{
+    color: #0c4151;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-align: center;
+}
+/* .container{
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start; 
+     flex-wrap: wrap;
+    /text-wrap: row;
+} */
+.container{
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+    
+#stationary{
+    background-color: #a8a8b0;
+    height: 40vh;
+    width: 200px;
+    border-radius: 10px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+#img2{
+    position: relative;
+    height: 15dvh;
+    /* width: 25dvh; */
+    margin-left: 40px;
+    margin-top: 3dvh;
+}
+#text1{
+    margin-top: 0;
+    margin-left: 25px;
+    font-weight: bold;
+}
+.txt1{
+    height: 5dvh;
+    width: 25dvh;
+    margin-top: 0;
+    margin-left: 25px;
+
+}
+button{
+    
+    position: relative;
+    /* color: #00120b; */
+    color: #f6efee;
+    /* background-color:#f6efee; */
+    background-color: #e152f4;
+    border-radius: 30px;
+    padding: 7px;
+    width: 140px;
+    font-size: 20px;
+    opacity: 0.75;
+    cursor: pointer;
+}
+@media  screen and (max-width:900px) {
+    .container{
+        height: 50vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin-bottom: 300px;
+        justify-items: center;
+        gap: 34px;
+    }
+}
+@media  screen and (max-width:500px) {
+    .container{
+        height: 50vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        margin-bottom: 970px;
+        justify-items: center;
+        gap: 34px;
+    }
+}

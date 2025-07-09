@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration Form</title>
+  <link rel="stylesheet" href="../Stylesheet/loginForm.css">
+</head>
+<body>
+  <div class="container">
+    <h2>User Registration Form</h2>
+    <form action="/addLogin" method="post" id="myForm">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email_id" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <img id="eye-close" src="../Images/eye-close.svg" alt="Password_Hidden">
+      </div>
+      <div class="form-group">
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+          <option disabled="disabled">Select Role</option>
+          <option value="Staff">Staff</option>
+          <option value="Lab Incharge">Lab Incharge</option>
+          <option value="HOD">HOD</option>
+          <option value="Principal">Principal</option>
+          <option value="StoreAdmin">StoreAdmin</option>
+          <option value="Admin">Admin</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Lab Incharge: Lab Name     StoreAdmin/HOD:Department Name" required>
+      </div>
+      <button id="submitButton" type="submit">Submit</button>
+    </form>
+  </div>
+<script type="module" src="../Javascript/second.js"></script>
+</body>
+</html>

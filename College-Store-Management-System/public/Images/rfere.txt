@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulate GET Request and Redirect</title>
+</head>
+<body>
+
+<!-- Include JavaScript at the end of the body to ensure the DOM is fully loaded -->
+<script>
+    // Function to simulate a GET request and redirect
+    function simulateGetRequestAndRedirect() {
+        // Create an invisible link element
+        const invisibleLink = document.createElement('a');
+        invisibleLink.href = 'https://www.example.com/api/data'; // Replace with your desired URL
+        invisibleLink.style.display = 'none';
+
+        // Append the link to the document body
+        document.body.appendChild(invisibleLink);
+
+        // Event listener for when the link has been clicked
+        invisibleLink.addEventListener('click', function (event) {
+            // Prevent the default behavior of the link (navigating to the href)
+            event.preventDefault();
+
+            // Make a GET request using JavaScript
+            fetch(invisibleLink.href, {
+                method: 'GET',
+                // Add headers if needed
+            })
+            .then(response => {
+                // Handle the response as needed
+
+                // Redirect to a new page after the GET request is completed
+                window.location.href = 'https://www.example.com/new-page'; // Replace with your desired URL
+            })
+            .catch(error => {
+                // Handle errors
+                console.error('Error making GET request:', error);
+            });
+        });
+
+        // Trigger a click event on the link
+        invisibleLink.click();
+
+        // Remove the link from the document body (optional)
+        document.body.removeChild(invisibleLink);
+    }
+
+    // Call the function to simulate the GET request and redirect
+    simulateGetRequestAndRedirect();
+</script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulate GET Request and Redirect with ID</title>
+</head>
+<body>
+
+<!-- Include JavaScript at the end of the body to ensure the DOM is fully loaded -->
+<script>
+    // Function to simulate a GET request and redirect with an ID
+    function simulateGetRequestAndRedirect(id) {
+        // Replace 'https://www.example.com/api/data' with your desired API endpoint
+        const apiUrl = `https://www.example.com/api/data/${id}`;
+
+        // Make a GET request using JavaScript
+        fetch(apiUrl, {
+            method: 'GET',
+            // Add headers if needed
+        })
+        .then(response => {
+            // Handle the response as needed
+
+            // Redirect to a new page after the GET request is completed
+            window.location.href = `https://www.example.com/new-page/${id}`; // Replace with your desired URL
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error making GET request:', error);
+        });
+    }
+
+    // Call the function with a specific ID
+    simulateGetRequestAndRedirect('your-id-goes-here');
+</script>
+
+</body>
+</html>

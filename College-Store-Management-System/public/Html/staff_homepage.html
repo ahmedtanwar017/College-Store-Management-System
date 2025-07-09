@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superb Staff Home Page</title>
+  <link rel="stylesheet" href="../Stylesheet/staff_homepage.css">
+  <!-- Add Font Awesome library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header>
+    <!-- <div class="navbar">
+      <button class="navbar-toggle" id="navbar-toggle"><img class="profile" src="../Images/profile.svg" alt=""></button>
+      <div class="navbar-links" id="navbar-links">
+        <div id="navbar-container">
+          
+        </div>
+      </div>
+    </div> -->
+    <a href='/signout'>
+      <button class="sign-Out">Sign Out</button>
+    </a>
+    <a href="/display-chart">
+      <button class="chartBut">Create chart</button>
+    </a>
+    <!-- Add Font Awesome icon for logo -->
+    <h1><i class="fas fa-users"></i> Welcome to Home Page</h1>
+  </header>
+  <div class="container">
+    <section id="request" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-shopping-cart"></i> Request Product</h2>
+      <p>Use this option to request a product.</p>
+      <a href="/req" class="btn btn-request"><i class="fas fa-cart-plus"></i> Request Product</a>
+    </section>
+    <section id="status" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-info-circle"></i> Check Product Status</h2>
+      <p>Use this option to check the status of a product.</p>
+      <a href="/check_status" class="btn btn-status"><i class="fas fa-search"></i> Check Product Status</a>
+    </section>
+    <section id="all-requests" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-list"></i> See All Submitted Requests</h2>
+      <p>View all requests submitted by staff.</p>
+      <a href="/see_all_req" class="btn btn-all-requests"><i class="fas fa-list"></i> See All Requests</a>
+    </section>
+    <section id="check-all-stock-details" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-archive"></i> Check All Stock Details</h2>
+      <p>View details of all stocked products.</p>
+      <a href="/get_all_Stock" class="btn btn-check-all-stock-details"><i class="fas fa-archive"></i> Check All Stock Details</a>
+    </section>
+  </div>
+<!-- <script src="../Javascript/staff.js"></script> -->
+<script>
+  // window.onload = function() {
+//     var message = typeof message !== 'undefined' ? message : '' ;
+//     if (message) {
+//         alert(message);
+//     }
+// };
+
+// const navbarToggle = document.getElementById('navbar-toggle');
+// const navbarLinks = document.getElementById('navbar-links');
+
+//         navbarToggle.addEventListener('click', () => {
+//       navbarLinks.classList.toggle('show');
+//       // Check if navbarLinks is visible after toggling the class
+//       if (navbarLinks.classList.contains('show')) {
+//           navbarLinks.style.display = 'block'; // Set display to block if navbarLinks is visible
+//       } else {
+//           navbarLinks.style.display = 'none'; // Reset display to its default value if navbarLinks is hidden
+//       }
+//   });
+
+//       fetch('/dashboard')
+//             .then(response => response.text())
+//             .then(navbarHtml => {
+//                 // Insert the navbar HTML into the desired location in the document
+//                 document.getElementById('navbar-container').innerHTML = navbarHtml ;
+//                 document.getElementById("signOutBtn").addEventListener("click", function() {
+//                 // Show the popup
+//                 document.getElementById("popupContainer").style.display = "flex";
+//               });
+
+//               // Add event listener to the "Yes" button
+//               document.getElementById("yesBtn").addEventListener("click", function() {
+//                 // Redirect to sign-out route
+//                 window.location.href = "/signout";
+//               });
+
+//               // Add event listener to the "No" button
+//               document.getElementById("noBtn").addEventListener("click", function() {
+//                 // Hide the popup
+//                 document.getElementById("popupContainer").style.display = "none";
+//               });
+//             })
+//             .catch(error => console.error('Error:', error));
+
+</script>
+</body>
+</html>

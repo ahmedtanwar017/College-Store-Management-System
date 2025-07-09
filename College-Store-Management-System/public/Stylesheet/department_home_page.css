@@ -1,0 +1,103 @@
+/* Stylesheet for Department Home Page */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color:  #1c345a    ; /* Blue background color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allow containers to wrap to next line */
+    margin-top: 50px;
+  }
+  
+  .option {
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .option h2 {
+    margin-bottom: 10px;
+  }
+  
+  .option p {
+    margin-bottom: 20px;
+  }
+  
+  .option .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:  #1c345a ;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .option .btn i {
+    margin-right: 5px;
+  }
+  
+  .option .btn:hover {
+    background-color: #808a9a;
+  }
+  .sign-Out{
+    position: absolute;
+    right: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1c345a ; /* Button background color */
+    color: #ffffff; /* Button text color */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+  }
+  .sign-Out:hover {
+    background-color: #808a9a; /* Darker shade of the button color */
+  }
+  /* Apply basic button styles */
+.chartBut {
+  position: absolute;
+  right: 150px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1c345a ; /* Button background color */
+  color: #ffffff; /* Button text color */
+  text-decoration: none; /* Remove underline */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+/* Change button color on hover */
+.chartBut:hover {
+  background-color: #808a9a; /* Darker shade of the button color */
+}

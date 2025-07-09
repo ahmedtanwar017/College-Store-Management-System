@@ -1,0 +1,86 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock</title>
+  <link rel="stylesheet" href="../Stylesheet/stock.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Stock</h2>
+    <form action="/main_stock" method="post" id="stockForm">
+        <div class="form-group">
+            <label for="product_name">Product Name:</label>
+            <input type="text" id="Product-input-box" name="product_name" autocomplete="off" placeholder="Enter product name" required>
+            <div id="Product-result-box" class="result-box"></div>
+        </div>
+        <div class="form-group">
+            <label for="product_description">Product Description:</label>
+            <textarea id="product_description" name="product_description" placeholder="Enter product description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" required>
+        </div>
+        <div class="form-group">
+            <input type="hidden" id="timestampInput" name="created_at" value="">
+        </div>
+        <div class="form-group">
+            <label for="supplier_name">Supplier Name:</label>
+            <input type="text" id="name_of_supplier" name="name_of_supplier" placeholder="Enter supplier name" required>
+        </div>
+        <button id="submitButton" type="submit">Submit</button>
+    </form>
+  </div>
+  <script type="module" src="../Javascript/stock.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock</title>
+  <link rel="stylesheet" href="../Stylesheet/stock.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Stock</h2>
+    <form action="/main_stock" method="post" id="stockForm">
+        <div class="form-group">
+            <label for="product_type">Product Type:</label>
+            <select id="product_type" name="product_type" required>
+              <option value="consumable">Consumable</option>
+              <option value="non-consumable">Non-Consumable</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="product_name">Product Name:</label>
+            <input type="text" id="Product-input-box" name="product_name" autocomplete="off" placeholder="Enter product name" required>
+            <div id="Product-result-box" class="result-box"></div>
+        </div>
+        <div class="form-group">
+            <label for="product_description">Product Description:</label>
+            <textarea id="product_description" name="product_description" placeholder="Enter product description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" min="1">
+        </div>
+        <div class="form-group">
+            <label for="amount">Total Amount:</label>
+            <input type="number" id="amount" name="amount" placeholder="Enter amount" min="1" required>
+        </div>
+        <div class="form-group">
+            <label for="name_of_supplier">Supplier Name:</label>
+            <input type="text" id="name_of_supplier" name="name_of_supplier" placeholder="Enter supplier name" required>
+        </div>
+        <button id="submitButton" type="submit">Submit</button>
+    </form>
+  </div>
+  <script type="module" src="../Javascript/stock.js"></script>
+</body>
+</html>

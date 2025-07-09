@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Stylesheet/Home_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"   />
+    <link rel="stylesheet" href="../Stylesheet/FAQS.css">
+    <title>FAQs</title>
+</head>
+
+<body>
+    <div class="background"></div>
+
+    <header>
+        <h1 class="name"><i><img src="../Images/logo.jpeg" alt="logo">&nbsp;College ProcureEase</i></h1>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/" target="_blank" id="home"><i class="fa fa-home"
+                            aria-hidden="true"></i>&nbsp;HOME</a></li>
+                <li><a href="/AboutUs" id="about"><i class="fa-solid fa-circle-info"></i>&nbsp;ABOUT US</a></li>
+                <li><a href="/Faqs" id="faqs"><i class="fa-regular fa-circle-question"></i>&nbsp;FAQS</a></li>
+            </ul>
+
+        </nav>
+        <div class="dropdown">
+            <a href="/Login">
+            <button class="login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Login</button>
+        </a>
+        </div>
+
+    </header>
+
+    <div class="faqs">
+        <img src="../Images/faqs bg2.jpg" alt="FAQs heading">
+    </div>
+
+    <div class="remaining">
+        <div class="search">
+            <form>
+                <i class="fa fa-search" id="search_icon" aria-hidden="true"></i>
+                <input type="text" id="search-question" placeholder="Type your Question" onkeyup="search()">
+            </form>
+
+            <div class="question-list" id="question-list">
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp; What is College ProcureEase?</h3>
+                    <p>College ProcureEase is an online platform designed to streamline procurement processes at M.H.
+                        Saboo Siddik College of Engineering. It offers a user-friendly interface for managing the
+                        college store and facilitating procurement activities.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;Who can use College ProcureEase?</h3>
+                    <p>College ProcureEase is accessible to all members of the M.H. Saboo Siddik College of Engineering
+                        community, including faculty, staff, and students.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;What roles are available on College ProcureEase?
+                    </h3>
+                    <p>There are two roles available: Member of the college store and Educator (Teachers and Students).
+                        Each role has specific features and functionalities tailored to their needs.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;How do I access my personalized dashboard?</h3>
+                    <p>After logging in, you will be directed to your personalized dashboard, which serves as the
+                        central hub for all store-related activities.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;Can I submit requests for specific items?</h3>
+                    <p>Yes, students and teachers can submit requests for stationary items or library resources
+                        available in the college. These requests will be reviewed by the store incharge for approval and
+                        fulfillment.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;Is there a limit to the number of requests I can
+                        submit?</h3>
+                    <p>There is no limit to the number of requests you can submit on College ProcureEase. Feel free to
+                        submit requests as needed for your college-related activities.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;How long does it take for requests to be
+                        processed?</h3>
+                    <p>The processing time for requests may vary depending on factors such as request volume and
+                        approval requirements. We strive to process requests promptly and will notify you of any updates
+                        via email.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;Can I track the status of my submitted requests?
+                    </h3>
+                    <p>Yes, you can track the status of your submitted requests through your dashboard. You will receive
+                        notifications regarding the approval status and availability updates for your requests.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;How do I add new products to the system?</h3>
+                    <p>Adding new products is easy! Simply navigate to the "New Product" section on your dashboard and
+                        fill out the required information in the data entry form. Once submitted, the product will be
+                        added to the system.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;Is there a limit to the number of products I can
+                        add to the system?</h3>
+                    <p>There is no limit to the number of products you can add to the system. Feel free to add products
+                        as needed to manage store inventory effectively.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;Can I generate reports on store activities and
+                        expenses?</h3>
+                    <p>Yes, you can generate reports on store activities and expenses through the reporting section on
+                        your dashboard. Customize the report parameters to generate insights tailored to your needs.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;How often are department and lab registers
+                        updated?</h3>
+                    <p>Department and lab registers are updated automatically in real-time whenever new product data is
+                        submitted. This ensures that all records are accurate and up-to-date at all times.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;How secure is my data on College ProcureEase?</h3>
+                    <p>College ProcureEase takes data security seriously and employs robust measures to protect user
+                        data. Your information is encrypted and kept confidential at all times.</p>
+                </div>
+
+                <div class="Question">
+                    <h3><i class="fa-solid fa-angles-right"></i>&nbsp;What if I encounter technical issues or need
+                        assistance?</h3>
+                    <p>If you encounter any technical issues or need assistance, you can contact us via <a
+                            href="">WhatsApp</a>. We are here to help resolve any issues you may have.</p>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../Javascript/FAQS.js"></script>
+
+    <a class="gotop" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+    <div class="conditions">
+        <p>Read our <a href="" type="_blank">Privacy Policy</a> and <a href="" type="_blank">Terms of services</a> for information on data usage and other user agreements</p>
+    </div>
+</body>
+
+</html>

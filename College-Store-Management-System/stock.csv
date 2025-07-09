@@ -1,0 +1,6 @@
+product_type,Product_name,Product_description,quantity,supplied_quantity,amount,name_of_supplier,status
+consumable,Paper,u3gfeug,200,0,40,Supplier 1,available
+consumable,Pen,u3gfeug,100,0,500,Supplier 1,available
+non-consumable,Keyboard,u3gfeug,50,0,100000,Supplier 2,available
+non-consumable,Computer,u3gfeug,10,0,500000,Supplier 2,available
+

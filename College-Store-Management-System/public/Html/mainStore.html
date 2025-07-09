@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Store Home Page</title>
+  <link rel="stylesheet" href="../Stylesheet/main_store_homepage.css">
+  <!-- Add Font Awesome library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header>
+    <!-- Add Font Awesome icon for logo -->
+    <a href='/signout'>
+      <button class="sign-Out">Sign Out</button>
+    </a>
+    <a href="/display-chart">
+      <button class="chartBut">Create chart</button>
+    </a>
+    <h1><i class="fas fa-store"></i> Main Store Home Page</h1>
+    <a href="/Products-Filter">
+      <button class="productPage">PRODUCTS</button>
+    </a>
+  </header>
+  <div class="container">
+    <section id="check-pending" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-list-alt"></i> Check Pending Requests</h2>
+      <p>View pending requests from staff.</p>
+      <a href="/check_recieved_req" class="btn btn-check-pending"><i class="fas fa-list-alt"></i> Check Pending Requests</a>
+    </section>
+    <section id="all-requests" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-list"></i> See All Submitted Requests</h2>
+      <p>View all requests submitted by staff.</p>
+      <a href="/check_allrecieved_req" class="btn btn-all-requests"><i class="fas fa-list"></i> See All Requests</a>
+    </section>
+    <section id="check-stock" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-boxes"></i> Check Available Stock</h2>
+      <p>View available stock of products.</p>
+      <a href="/getStock" class="btn btn-check-stock"><i class="fas fa-boxes"></i> Check Available Stock</a>
+    </section>
+    <section id="stock-details" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-clipboard-list"></i> See All Stock Details</h2>
+      <p>View details of all products in stock.</p>
+      <a href="/get_all_Stock" class="btn btn-stock-details"><i class="fas fa-clipboard-list"></i> See All Stock Details</a>
+    </section>
+    <!-- New section for Add Stock -->
+    <section id="add-stock" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-plus-circle"></i> Add Stock</h2>
+      <p>Add new stock of products.</p>
+      <a href="/main_stock" class="btn btn-add-stock"><i class="fas fa-plus-circle"></i> Add Stock</a>
+    </section>
+    <section id="stock-supplying-details" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-truck"></i> Stock Supplying Details</h2>
+      <p>Add details of stock supplying.</p>
+      <a href="/dsStock" class="btn btn-stock-supplying-details"><i class="fas fa-truck"></i> Stock Supplying Details</a>
+    </section>
+  </div>
+</body>
+</html>
+

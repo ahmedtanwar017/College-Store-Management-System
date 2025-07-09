@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Table</title>
+    <link rel="stylesheet" href="../public/Stylesheet/DSStocke.css">
+</head>
+<body>
+    <!-- <h2>Data Table</h2> -->
+ <div className="container">
+    <div class="back">
+        <a href="/return" >
+           <img src="/public/Images/home.svg" alt="back">
+        </a>
+    </div>
+    <div id="download">
+        <!-- <div id="link" class="image">
+            <img class="download" src="../public/Images/csvDownload.svg" alt="Download Button"/>
+        </div>
+        <div class="text">
+            <p>DOWNLOAD</p>
+        </div> -->
+<div class="csv">
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="csvFile" id="csvFile" accept=".csv">
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+
+        <form action="/download_excel" method="post">
+            <img src="../public/Images/download.svg" alt="download">
+            <input type="hidden" name="data" value="<%= JSON.stringify(data) %>">
+            <input type="hidden" name="columns" value="<%= JSON.stringify(columns) %>">
+            <button id="downloadButton" type="submit">Download</button>
+        </form>
+    </div>
+
+      <% if (typeof data === 'string' || !Array.isArray(columns) || columns.length === 0) { %>
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="close" id="closeBtn">&times;</span>
+                <h5>No data available</h5>
+            </div>
+          </div>
+    <% } else { %>
+
+        <%- include('table', { columns: columns, data: data }) %>
+
+    <% } %>
+    
+</div>
+
+
+<script>
+            document.getElementById('csvFile').addEventListener('change', function() {
+            const fileInput = this;
+        });
+        const closeBtn = document.getElementById('closeBtn');
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+
+
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const fileInput = document.getElementById('csvFile');
+
+            // Check if a file is selected
+            if (fileInput.files.length === 0) {
+                alert('Please select a file.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('csvFile', fileInput.files[0]);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Upload failed');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log('File uploaded successfully:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+</script>
+</body>
+</html>
+

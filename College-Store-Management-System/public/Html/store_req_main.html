@@ -1,0 +1,79 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Store Request</title>
+    <link rel="stylesheet" href="../Stylesheet/store_req_main.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Main Store Request Form</h2>
+        <form id="myForm" action="/req_main" method="post">
+            <div class="form-group">
+                <label for="Product-input-box">Product:</label>
+                <input name="Product_name" type="text" placeholder="Enter the Product" class="pname input-box" id="Product-input-box" autocomplete="off" autofocus required>
+                <div id="Product-result-box" class="result-box"></div>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="requested_by">Requested by:</label>
+                <input type="text" placeholder="Name of the person requesting" id="requested_by" name="requested_by" autocomplete="off" required>
+            </div>
+            <button id="submitButton" type="submit">Submit Request</button>
+        </form>
+    </div>
+    <script type="module" src="../Javascript/store_req_main.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Store Request</title>
+    <link rel="stylesheet" href="../Stylesheet/store_req_main.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Main Store Request Form</h2>
+        <form id="myForm" action="/req" method="post">
+            <div class="form-group">
+                <label for="productType">Product Type:</label>
+                <select name="product_type" id="productType" required>
+                    <option value="Consumable">Consumable</option>
+                    <option value="Non-consumable">Non-consumable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Product-input-box">Product Name:</label>
+                <input name="Product_name" type="text" placeholder="Enter the Product Name" class="pname input-box" id="Product-input-box" autocomplete="off" autofocus required>
+                <div id="Product-result-box" class="result-box"></div>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Product Description:</label>
+                <textarea id="productDescription" name="product_description" placeholder="Enter the Product Description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="remark">Remark:</label>
+                <textarea id="remark" name="remark" placeholder="Enter any Remarks" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="requested_by">Requested by:</label>
+                <input type="text" placeholder="Name of the person requesting" id="requested_by" name="requested_by" autocomplete="off" required>
+            </div>
+            <button id="submitButton" type="submit">Submit Request</button>
+        </form>
+    </div>
+    <script type="module" src="../Javascript/store_req_main.js"></script>
+</body>
+</html>

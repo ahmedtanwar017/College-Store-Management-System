@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department Home Page</title>
+  <link rel="stylesheet" href="../Stylesheet/department_home_page.css">
+  <!-- Add Font Awesome library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header>
+    <a href='/signout'>
+      <button class="sign-Out">Sign Out</button>
+    </a>
+    <!-- Add Font Awesome icon for logo -->
+    <a href="/display-chart">
+      <button class="chartBut">Create chart</button>
+    </a>
+    <h1><i class="fas fa-building"></i> Department Home Page</h1>
+  </header>
+  <div class="container">
+    <section id="check-pending" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-list-alt"></i> Check Pending Requests</h2>
+      <p>View pending requests from staff for products.</p>
+      <a href="/check_recieved_req" class="btn btn-check-pending"><i class="fas fa-list-alt"></i> Check Pending Requests</a>
+    </section>
+    <section id="check-all-requests" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-list"></i> Check All Requests</h2>
+      <p>View all requests submitted by staff.</p>
+      <a href="/check_allrecieved_req" class="btn btn-check-all-requests"><i class="fas fa-list"></i> Check All Requests</a>
+    </section>
+    <section id="check-available-stock" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-box-open"></i> Check Available Stock</h2>
+      <p>Check the available stock of products.</p>
+      <a href="/getStock" class="btn btn-check-available-stock"><i class="fas fa-box-open"></i> Check Available Stock</a>
+    </section>
+  </div>
+  <div class="container">
+    <section id="send-request" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-cart-plus"></i> Send Request</h2>
+      <p>Submit a request for a product to the main store.</p>
+      <a href="/req" class="btn btn-send-request"><i class="fas fa-cart-plus"></i> Send Request</a>
+    </section>
+    <section id="check-status" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-search"></i> Check Product Status</h2>
+      <p>Check the status of submitted requests.</p>
+      <a href="/check_status" class="btn btn-check-status"><i class="fas fa-search"></i> Check Product Status</a>
+    </section>
+    <section id="check-all-stock-details" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-archive"></i> Check All Stock Details</h2>
+      <p>View details of all stocked products.</p>
+      <a href="/get_all_Stock" class="btn btn-check-all-stock-details"><i class="fas fa-archive"></i> Check All Stock Details</a>
+    </section>
+  </div>
+  <div class="container">
+    <section id="check-all-submitted-requests" class="option">
+      <!-- Add Font Awesome icon before the heading -->
+      <h2><i class="fas fa-tasks"></i> Check All Submitted Requests</h2>
+      <p>View details of all requests submitted by Department Store.</p>
+      <a href="/see_all_req" class="btn btn-check-all-submitted-requests"><i class="fas fa-tasks"></i> Check All Submitted Requests</a>
+    </section>
+  </div>
+</body>
+</html>
+

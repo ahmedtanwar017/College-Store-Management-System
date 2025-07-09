@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.background{
+    background-color: rgb(172, 134, 88);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../Images/m-h-saboo-siddik-college-of-engineering-mumbai-254643.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.5;
+    background-blend-mode:multiply;
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+}
+
+.navbar{
+    width: 1200px;
+    height: 75px;
+    margin-left: 20px;
+    margin-right: 0px;
+}
+
+.icon {
+    width: 200px;
+    float: left;
+    height: 70px;
+    margin-top: 2px;
+}
+
+.logo{
+    color: rgb(97, 249, 249);
+    font-size: 23px;
+    font-family: Arial;
+    float: left;
+    padding-top: 10px;
+    margin-top: 17PX;
+    font-weight: bolder;
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+    margin-left: 200px;
+
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 20px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: aliceblue;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: rgb(161, 110, 65);
+}
+
+#home:hover{
+    font-size: 25px;
+}
+
+#about:hover{
+    font-size: 25px;
+}
+
+#faqs:hover{
+    font-size: 25px;
+}
+
+.login_button{
+    margin-top: 22px;
+    margin-left: 300px;
+    margin-right: 0px;
+    size: 100px;
+    background-color: rgb(158, 205, 49);
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.login_button:active{
+    background-color: antiquewhite;
+}
+
+.login_button:hover{
+    background-color: bisque;
+}
+
+.content{
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    margin-left: 5%;
+    color: rgb(31, 72, 133);
+    position: relative;
+}
+
+.content .paragraph{
+    padding-left: 2px;
+    padding-bottom: 25px;
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+
+.content h1{
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    padding-left: 2px;
+    margin-top: 9%;
+    letter-spacing: 2px;
+}
+
+.paragraph{
+    font-size: 30px;
+    line-height: 50px;
+    padding-top: 10px;
+}

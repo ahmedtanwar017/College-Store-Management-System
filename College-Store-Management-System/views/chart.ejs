@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Chart</title>
+    <!-- Include Chart.js library -->
+    <style>
+        /* CSS for Canvas */
+        .canvas {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            /* overflow-y: auto; */
+            grid-template-columns: 1fr;
+            grid-template-columns: 1fr;
+            margin-top: 20px;
+            gap: 50px;
+            background-color:white;
+        }
+        .chart-container {
+            text-align: center; /* Center the content horizontally */
+        }
+
+        .chart-title {
+            font-size: 24px; /* Adjust the font size as needed */
+            font-weight: bold; /* Optionally make the text bold */
+            margin-bottom: 20px; /* Add some space between the title and the chart */
+            color:#333;
+        }
+
+
+
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <form id="statusForm" action='/chart-data' method="post">
+        <label for="startYear">Start Year:</label>
+        <select id="startYear" name="startYear" required>
+            <option value="">Select Start Year</option>
+            <% yearsRange.forEach(year => { %>
+                <option value="<%= year %>"><%= year %></option>
+            <% }); %>
+        </select><br><br>
+        <label for="endYear">End Year:</label>
+        <select id="endYear" name="endYear" required>
+            <option value="">Select End Year</option>
+            <% yearsRange.forEach(year => { %>
+                <option value="<%= year %>"><%= year %></option>
+            <% }); %>
+        </select><br><br>
+        <button type="button" onclick="fetchDataAndRenderCharts()">Update Chart</button>
+    </form>
+    <!-- Canvas element for the chart -->
+    <div class="canvas">
+        <!-- <canvas id="myChart"></canvas> -->
+        <div class="chart-container">
+            <h2 class="chart-title">CONSUMABLES</h2>
+            <canvas id="consumableChart"></canvas>
+        </div>
+        <div class="separator"></div>
+        <div class="chart-container">
+            <h2 class="chart-title">NON-CONSUMABLES</h2>
+            <canvas id="nonConsumableChart"></canvas>
+        </div>
+    </div>
+    <script>
+        // Function to fetch data from the server and render the chart
+// Function to fetch data from the server and render the chart
+// Function to fetch data from the server and render the chart
+// async function fetchDataAndRenderChart() {
+//     // Fetch data from server
+//     const startYear = document.getElementById('startYear').value || null;
+//             const endYear = document.getElementById('endYear').value || null;
+
+//             // Prepare the request body with startYear and endYear
+//             const requestBody = JSON.stringify({ startYear, endYear });
+//             const response = await fetch(`/chart-data`, {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: requestBody
+//             });
+            
+//     const data = await response.json();
+
+//     // Extract labels and data from the response
+//     const labels = data.map(entry => entry.product_name);
+//     const quantities = data.map(entry => entry.total_quantity);
+
+//     // Get the canvas element
+//     const ctx = document.getElementById('myChart').getContext('2d');
+
+//     // Check if an existing chart instance exists
+//     if (window.myChart instanceof Chart) {
+//         // Destroy the existing chart
+//         window.myChart.destroy();
+//     }
+//     // const chartWidth = quantities.length > 10 ? 800 : 400;
+//     // const chartHeight = quantities.length > 10 ? 400 : 200;
+
+//     // // Set the canvas size
+//     // ctx.canvas.width = chartWidth;
+//     // ctx.canvas.height = chartHeight;
+//     // console.log(chartWidth)
+//     // console.log(ctx.canvas.width)
+
+//     // Create new chart
+//     window.myChart = new Chart(ctx, {
+//         type: 'bar',
+//         data: {
+//             labels: labels,
+//             datasets: [{
+//                 label: 'Total Quantity',
+//                 data: quantities,
+//                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
+//                 borderColor: 'rgba(255, 99, 132, 1)',
+//                 borderWidth: 1.5
+//             }]
+//         },
+//         options: {
+//             scales: {
+//                 y: {
+//                     beginAtZero: true
+//                 }
+//             }
+//         }
+//     });
+// }
+
+
+
+//         // Call the function to fetch data and render the chart
+//         fetchDataAndRenderChart();
+
+// Show the canvas elements after creating the charts
+document.querySelectorAll('.canvas canvas').forEach(canvas => {
+    canvas.classList.add('show');
+});
+
+
+async function fetchDataAndRenderCharts() {
+    // Get the start and end year values from input fields
+    const startYear = document.getElementById('startYear').value || null;
+    const endYear = document.getElementById('endYear').value || null;
+
+    // Prepare the request body with startYear and endYear
+    const requestBody = JSON.stringify({ startYear, endYear });
+
+    try {
+        // Fetch data for consumable products
+        const consumableDataResponse = await fetch(`/chart-data-c`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: requestBody
+        });
+        const consumableData = await consumableDataResponse.json();
+
+        // Fetch data for non-consumable products
+        const nonConsumableDataResponse = await fetch(`/chart-data-n`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: requestBody
+        });
+        const nonConsumableData = await nonConsumableDataResponse.json();
+
+        // Get the canvas elements for both charts
+        const consumableCtx = document.getElementById('consumableChart').getContext('2d');
+        const nonConsumableCtx = document.getElementById('nonConsumableChart').getContext('2d');
+
+
+       // Extract labels and data for consumable products
+const consumableLabels = consumableData.map(entry => entry.product_name);
+const consumableQuantities = consumableData.map(entry => ({
+    total_quantity: entry.total_quantity,
+    total_amount: entry.total_amount
+}));
+
+
+
+// Extract labels and data for non-consumable products
+const nonConsumableLabels = nonConsumableData.map(entry => entry.product_name);
+const nonConsumableQuantities = nonConsumableData.map(entry => ({
+    total_quantity: entry.total_quantity,
+    total_amount: entry.total_amount/100000
+}));
+
+ // Check if existing chart instances exist and destroy them
+ if (window.consumableChart instanceof Chart) {
+            window.consumableChart.destroy();
+        }
+if (window.nonConsumableChart instanceof Chart) {
+            window.nonConsumableChart.destroy();
+        }
+
+// Create new chart for consumable products
+window.consumableChart = new Chart(consumableCtx, {
+    type: 'bar',
+    data: {
+        labels: consumableLabels,
+        datasets: [{
+            label: 'Total Quantity (Consumable)',
+            data: consumableQuantities.map(entry => entry.total_quantity),
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1.5
+        },
+        {
+            label: 'Total Amount',
+            data: consumableQuantities.map(entry => entry.total_amount),
+            backgroundColor: 'rgba(255, 159, 64, 0.2)',
+            borderColor: 'rgba(255, 159, 64, 1)',
+            borderWidth: 1.5
+        }]
+    },
+    options: {
+        indexAxis: 'x', // Display bars vertically
+        scales: {
+            x: {
+                stacked: false, // Ensure bars are not stacked
+                beginAtZero: true
+            },
+            y: {
+                stacked: false, // Ensure bars are not stacked
+                beginAtZero: true,
+                type: 'logarithmic'
+            }
+        },
+        barPercentage: 0.4, // Adjust the width of each bar
+        categoryPercentage: 1.0, // Ensure bars touch each other
+        
+    }
+});
+
+
+// Create new chart for non-consumable products
+window.nonConsumableChart = new Chart(nonConsumableCtx, {
+    type: 'bar',
+    data: {
+        labels: nonConsumableLabels,
+        datasets: [{
+            label: 'Total Quantity (Non-Consumable)',
+            data: nonConsumableQuantities.map(entry => entry.total_quantity),
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1.5,
+            
+        },
+        {
+            label: 'Total Amount(Lakhs)',
+            data: nonConsumableQuantities.map(entry => entry.total_amount),
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1.5,
+            
+        }]
+    },
+    options: {
+        indexAxis: 'x', // Display bars vertically
+        scales: {
+            x: {
+                stacked: false, // Ensure bars are not stacked
+                beginAtZero: true
+            },
+            y: {
+                stacked: false, // Ensure bars are not stacked
+                beginAtZero: true,
+                type: 'logarithmic'
+            }
+        },
+        barPercentage: 0.4, // Adjust the width of each bar
+        categoryPercentage: 1.0, // Ensure bars touch each other
+        
+    }
+});
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+
+// Call the function to fetch data and render the charts
+fetchDataAndRenderCharts();
+
+    </script>
+</body>
+</html>

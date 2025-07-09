@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 150px;
+    height: 100vh;
+  }
+  
+  .status-form {
+    text-align: center;
+  }
+  
+  .status-result {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .button{
+    color: #007bff;
+  }

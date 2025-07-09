@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Table</title>
+    <style>
+        /* CSS for Table */
+        table {
+            border-collapse: collapse;
+            min-width: 70%;
+            margin: 0 auto; 
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        th {
+            /* background-color: #f2f2f2; */
+            background-color: #333; /* Dark background color for header cells */
+            color: #fff; /* Text color for header cells */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Light background color for even rows */
+        }
+
+            /* Hover effect */
+        tr:hover {
+            background-color: #ddd; /* Darker background color on hover */
+        }
+        /* CSS for Heading */
+        h2 {
+            text-align: center;
+        }
+
+        /* CSS for Amount */
+        .amount {
+            font-weight: bold;
+        }
+
+        /* CSS for Buttons */
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .back {
+            margin-left: 20px;
+        }
+
+        .input-buttons, .action-buttons {
+            display: inline-block;
+        }
+
+        /* CSS for Download */
+        #download {
+            margin-right: 20px;
+        }
+
+        #download img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* CSS for Container */
+        .container {
+            text-align: center;
+        }
+        .button{
+            display: grid;
+            justify-content: space-evenly;
+        }
+        /* CSS for Received Button */
+        #receivedButton {
+            background-color: #007bff;
+            color: white;
+        }
+        #receivedButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            padding-left: 18px;
+            width: 100px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #receivedButton:hover {
+            background-color: #0056b3;
+        }
+        .popup {
+            display: block;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .select{
+           position: absolute;
+           right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <% if (typeof data === 'string' || !Array.isArray(columns) || columns.length === 0) { %>
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                  <span class="close" id="closeBtn">&times;</span>
+                  <p>No data available</p>
+                </div>
+              </div>
+        <% } else { %> -->
+            <table>
+                <thead>
+                    <tr> 
+                        <% columns.forEach(column => { %>
+                            <th><%= column %></th>
+                        <% }); %>
+                        <th>Select</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (Array.isArray(data)) { %>
+                        <% data.forEach((row) => { %>
+                            <tr>
+                                <% columns.forEach(column => { %>
+                                    <td>
+                                        <% if (column === 'requested_at' || column === 'created_at' || column === 'received_at') { %>
+                                            <%= row[column].toLocaleString() %>
+                                        <% } else { %>
+                                            <%= row[column] %>
+                                        <% } %>
+                                    </td>
+                                <% }); %>
+                                <td><input type="checkbox" class="row-checkbox" data-row='<%= JSON.stringify(row) %>'></td>
+                            </tr>
+                        <% }); %>
+                    <% } %>
+                    <% if (data.length > 0 && data[0].hasOwnProperty('amount')) { %>
+                        <% let totalAmount = data.reduce((acc, row) => acc + (row.amount || 0), 0); %>
+                        <tr>
+                            <td colspan="<%= columns.length + 1 %>">Total Amount: <span class="amount"><%= totalAmount %></span></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            
+        <!-- <% } %> -->
+        
+    </div>
+    <div class="select">
+        <input type="checkbox" id="selectAll"> <!-- Select All checkbox -->
+        <label for="selectAll">Select All</label>
+    </div>
+    <div class="button">
+        <button id="receivedButton">Received</button>
+    </div>
+
+    <script>
+        document.getElementById("receivedButton").addEventListener("click", function() {
+            var selectedData = [];
+            var checkboxes = document.querySelectorAll(".row-checkbox:checked");
+            checkboxes.forEach(function(checkbox) {
+                var row = JSON.parse(checkbox.getAttribute("data-row"));
+                var firstColumnData = row[Object.keys(row)[0]]; // Retrieve data of the first column
+                selectedData.push(firstColumnData);
+            });
+            console.log("Selected Data (First Column):", selectedData);
+            
+            // Make a POST request for each element in the selectedData array
+            selectedData.forEach(function(data) {
+                var postData = {
+                    request_id: data // Modify this according to your data structure
+                };
+                
+                // Make the POST request
+                fetch("/recieved", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(postData)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Handle the response data here if needed
+                    console.log('Response:', data);
+                })
+                .catch(error => {
+                    // Handle errors here
+                    console.error('Error:', error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Chart</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <form id="statusForm"  action='/display-chart' method="post">
+        <label for="startYear">Start Year:</label>
+        <select id="startYear" name="startYear" required></select><br><br>
+        <label for="endYear">End Year:</label>
+        <select id="endYear" name="endYear" required></select><br><br>
+        <button type="submit">Check Status</button>
+      </form>
+    <!-- Canvas element for the chart -->
+    <canvas id="myChart"></canvas>
+
+    <script>
+        // Function to fetch data from the server and render the chart
+        async function fetchDataAndRenderChart() {
+            // Fetch data from server
+            const response = await fetch(`/chart-data`);
+            const data = await response.json();
+
+            // Extract labels and data from the response
+            const labels = data.map(entry => entry.product_name);
+            const quantities = data.map(entry => entry.total_quantity);
+
+            // Create chart
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total Quantity',
+                        data: quantities,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Call the function to fetch data and render the chart with a default department
+        fetchDataAndRenderChart();
+    </script>
+</body>
+</html>

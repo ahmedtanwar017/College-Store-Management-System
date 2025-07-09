@@ -1,0 +1,127 @@
+/* Stylesheet for Main Store Home Page */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set up styles for the header */
+  header {
+    height: 90px;
+    background-color: #1c345a; /* Blue background color */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 20px; /* Add padding to top and bottom */
+  }
+  
+  /* Set up styles for the container */
+  .container {
+    display: flex; /* Use flexbox to align sections horizontally */
+    flex-wrap: wrap; /* Allow sections to wrap to next line if needed */
+    justify-content: center; /* Center align the sections */
+    margin-top: 50px; /* Add space from the header */
+  }
+  
+  /* Set up styles for each section */
+  .option {
+    background-color: #f9f9f9; /* Light gray background */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Add padding inside each section */
+    margin: 10px; /* Add space between sections */
+    text-align: center;
+    width: calc(50% - 20px); /* Set a width for each section */
+  }
+  
+  .option:nth-child(odd) {
+    margin-bottom: 0; /* Remove bottom margin for sections in first row */
+  }
+  
+  .option:nth-child(even) {
+    margin-top: 0; /* Remove top margin for sections in second row */
+  }
+  
+  .option h2 {
+    margin-bottom: 10px; /* Add space below heading */
+  }
+  
+  .option p {
+    margin-bottom: 20px; /* Add space below paragraph */
+  }
+  
+  /* Set up styles for the buttons */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1c345a; /* Blue background */
+    color: #fff; /* White text */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .btn i {
+    margin-right: 5px; /* Add space between icon and text */
+  }
+  
+  .btn:hover {
+    background-color:#808a9a; /* Darker blue on hover */
+  }
+  
+/* Styles for the button */
+.productPage {
+    position: relative;
+    left: 45%;
+    bottom: 33px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0f0f0; /* Green background color */
+    color: #1c345a; /* White text color */
+    border: none; /* No border */
+    border-radius: 20px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect */
+.productPage:hover {
+    background-color: #cfcdcd; /* Darker green background color on hover */
+}
+.sign-Out{
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1c345a; /* Button background color */
+  color: #ffffff; /* Button text color */
+  text-decoration: none; /* Remove underline */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+.sign-Out:hover {
+  background-color: #808a9a; /* Darker shade of the button color */
+}
+.chartBut {
+  position: absolute;
+  right: 160px;
+  top: 26px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1c345a; /* Button background color */
+  color: #ffffff; /* Button text color */
+  text-decoration: none; /* Remove underline */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+/* Change button color on hover */
+.chartBut:hover {
+  background-color: #808a9a; /* Darker shade of the button color */
+}

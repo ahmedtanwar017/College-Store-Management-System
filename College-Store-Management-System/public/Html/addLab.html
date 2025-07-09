@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Information Form</title>
+  <link rel="stylesheet" href="../Stylesheet/loginForm.css">
+</head>
+<body>
+  <div class="container">
+    <p class="Note">NOTE:Fill this form after creating Login</p>
+    <h2>Lab Information Form</h2>
+    
+    <form action="/addLab" method="post" id="labForm">
+        <div class="form-group">
+            <label for="Lab-id">Lab ID:</label>
+            <input type="text" id="lab-id" name="lab_id" placeholder="Enter the Lab ID" required>
+        </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email_id" placeholder="Enter the email used to create login" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

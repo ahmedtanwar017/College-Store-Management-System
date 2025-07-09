@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #1c345a; /* Blue background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 20px 0; /* Add padding to top and bottom */
+  }
+  
+  .container {
+    display: flex; /* Use flexbox to align sections horizontally */
+    justify-content: center; /* Center align the sections */
+    margin-top: 50px; /* Add space from the header */
+  }
+  
+  .option {
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #dee2e6; /* Gray border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Add padding inside each section */
+    margin: 0 10px; /* Add space between sections */
+    text-align: center;
+    width: 700px; /* Set a wider width for the container */
+  }
+  
+  .option h2 {
+    margin-bottom: 10px; /* Add space below heading */
+  }
+  
+  .option p {
+    margin-bottom: 20px; /* Add space below paragraph */
+  }
+  
+  /* Set up styles for the buttons */
+  .btn {
+    background-color: #1c345a; /* Blue background */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Add padding inside button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .btn:hover {
+    background-color: #808a9a; /* Darker blue on hover */
+  }
+  .sign-Out{
+    position: absolute;
+    right: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1c345a; /* Button background color */
+    color: #ffffff; /* Button text color */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+  }
+  .sign-Out:hover {
+    background-color: #808a9a; /* Darker shade of the button color */
+  }

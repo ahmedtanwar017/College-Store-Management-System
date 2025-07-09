@@ -1,0 +1,11 @@
+item_id,Product_name,product_type,Product_description,quantity,supplied_quantity,amount,created_at,name_of_supplier,status
+3,Paper,consumable,Description for Product C,500,0,100.00,2022-03-20 08:45:00,Supplier 3,available
+4,Printer,non-consumable,Description for Product D,30,0,750000.00,2022-04-30 14:20:00,Supplier 1,available
+5,Pen E,consumable,Description for Product E,250,0,1250.00,2022-05-10 09:00:00,Supplier 2,available
+6,AC,non-consumable,Description for Product F,20,0,800000.00,2022-06-18 16:00:00,Supplier 3,available
+7,Pencil,consumable,Description for Product G,150,0,750.00,2023-01-01 10:00:00,Supplier 1,available
+8,Keyboard,non-consumable,Description for Product H,200,0,200000.00,2023-02-15 12:30:00,Supplier 2,available
+9,Pen,consumable,Description for Product I,100,0,500.00,2023-03-20 08:45:00,Supplier 3,available
+10,Computer,non-consumable,Description for Product J,30,0,1350000.00,2023-04-30 14:20:00,Supplier 1,available
+11,Paper,consumable,Description for Product A,200,0,40.00,2022-01-01 10:00:00,Supplier 1,available
+12,Pencil,consumable,Description for Product B,200,0,1000.00,2022-02-15 12:30:00,Supplier 2,available

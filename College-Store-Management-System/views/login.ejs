@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../Stylesheet/style2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="center">
+          <h1>Login</h1>
+          <% if (errorMessage) { %>
+            <p class="error" ><%= errorMessage %></p>
+          <% } %>
+          <form action="/login" method="POST">
+              <div class="txt_field">
+                  <input type="email" name="email_id" autocomplete="address-level1" required>
+                  <span></span>
+                  <label>College Email ID</label>
+              </div>
+              <div class="txt_field">
+                  <input id="password" type="password" name="password" required>
+                  <img id="eye-close" src="../Images/eye-close.svg" alt="Password_Hidden">
+                  <span></span>
+                  <label>Password</label>
+              </div>
+              <div class="password">
+                <div class="pass"></div>
+                <div class="pass"><a href="/change-password">Change Password</a></div>
+              </div>
+              <input name="submit" type="Submit" value="Login">
+              
+          </form>
+      </div>
+    </div>
+    <script type="module" src="../Javascript/second.js"></script>
+  </body>
+</html>

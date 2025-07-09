@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+form {
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+}
+.chart-container {
+    position: relative;
+    width: 400px;
+    height: 300px;
+}
+.separator {
+    width: 100%; /* Adjust the width as needed */
+    height: 10px; /* Adjust the height as needed */
+    background-color: #ccc; /* Adjust the color as needed */
+    margin: 20px 0; /* Adjust the margin as needed */
+  }
+  

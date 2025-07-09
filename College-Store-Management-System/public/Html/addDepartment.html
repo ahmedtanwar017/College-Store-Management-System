@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department Information Form</title>
+  <link rel="stylesheet" href="../Stylesheet/loginForm.css">
+</head>
+<body>
+  <div class="container">
+    <p class="Note">NOTE:Fill this form after creating Login</p>
+    <h2>Department Information Form</h2>
+    
+    <form action="/addDepartment" method="post" id="departmentForm">
+        <div class="form-group">
+            <label for="department-id">Department ID:</label>
+            <input type="text" id="department-id" name="department_id" placeholder="Enter the department ID" required>
+        </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email_id" placeholder="Enter the email used to create login " required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
